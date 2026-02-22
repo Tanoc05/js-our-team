@@ -70,3 +70,30 @@
 .card-email{
     color: lightskyblue;
 }
+
+.form-new{
+    text-align: center;
+}
+
+.form{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+input{
+    padding: 10px 10px;
+    border-radius: 15px;
+    border: 1px solid grey;
+}
+
+button{
+    border-radius: 15px;
+    border: 1px solid grey;
+    padding: 10px 20px;
+}
+
+button:hover{
+    background-color: grey;
+}

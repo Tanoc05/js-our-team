@@ -40,9 +40,9 @@ const teamMembers = [
 
 const container = document.querySelector(".card-container");
 
-for (let index = 0; index < teamMembers.length; index++) {
-  
-  const {name,role,email,img} = teamMembers[index];
+function domCreateCard(teamMembers){
+
+  const {name,role,email,img} = teamMembers;
 
   const card = document.createElement("div");
   card.classList.add("card");
@@ -87,8 +87,41 @@ for (let index = 0; index < teamMembers.length; index++) {
   card.appendChild(cardInfo);
 
   container.appendChild(card);
-
 }
 
+
+function domCreateAllCard(){
+  for (let index = 0; index < teamMembers.length; index++) {
+    domCreateCard(teamMembers[index]);
+  }
+}
+
+domCreateAllCard();
+
+const button = document.querySelector(".aggiungi-membro");
+const fieldNewName = document.querySelector(".new-name");
+const fieldNewRole = document.querySelector(".new-role");
+const fieldNewEmail = document.querySelector(".new-email");
+
+
+button.addEventListener('click',(event) =>{
+  event.preventDefault();
+
+  const newName = fieldNewName.value;
+  const newRole = fieldNewRole.value;
+  const newEmail = fieldNewEmail.value;
+
+  console.log(newName + newRole + newEmail);
+  
+  const newMeber = {
+    name : newName,
+    role : newRole,
+    email : newEmail,
+    img : "assets/img/female3.png"
+  }
+
+  teamMembers.push(newMeber);
+  domCreateCard(newMeber);
+})
 
 
